@@ -7,24 +7,35 @@ const navigation = ref([
   {
     "title":"Home",
     "_path":"/",
-    "icon":"emojione:house",
+    "icon":{
+      "name":"emojione:house",
+      "class":"",
+    },
     "show_title": true
   },
   {
     "title":"collab",
     "_path":"/collab",
-    "icon":"logos:openai-icon",
+    "icon": {
+      "name": "logos:openai-icon",
+      "class": "text-primary dark:text-white",
+    },
     "show_title": true
   },
   {
     "title": "github",
     "_path": "https://github.com/MarcoAAlmeida",
-    "icon": "logos:github-icon"
+    "icon": {
+      "name": "logos:github-icon",
+      "class": "text-primary dark:text-white",
+    },
   },
   {
     "title": "linkedIn",
     "_path": "https://www.linkedin.com/in/marcoaasilva/",
-    "icon": "logos:linkedin-icon"
+    "icon": {
+      "name": "logos:linkedin-icon",
+    },
   }
 ])
 
@@ -40,9 +51,9 @@ const target = (attribute: string) => attribute.startsWith("http") ? "_blank" : 
       :to="link._path"
       :target="target(link._path)"
       active-class="font-bold"
-      class="mr-2"
+      class="mr-2 dark:text-white"
     >
-      <Icon :name="link.icon" /> <span v-if="link.show_title">{{ link.title }}</span>
+      <Icon :name="link.icon.name" :class="link.icon.class" /> <span v-if="link.show_title">{{ link.title }}</span>
     </NuxtLink>
   </div>
 </template>
