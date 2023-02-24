@@ -6,7 +6,7 @@
 export default {
   setup () {
     useHead({
-      titleTemplate: '%s - useHead example',
+      titleTemplate: '%s - a ML learning resource',
       bodyAttrs: {
         style: 'background-image:url(\'/img/pattern/dalle-5.png\')'
       }
