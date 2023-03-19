@@ -31,6 +31,13 @@ const navigation = ref([
     },
   },
   {
+    "title": "twitter",
+    "_path": "https://twitter.com/MarcoDevBR",
+    "icon": {
+      "name": "logos:twitter"
+    },
+  },
+  {
     "title": "linkedIn",
     "_path": "https://www.linkedin.com/in/marcoaasilva/",
     "icon": {
@@ -51,7 +58,7 @@ const target = (attribute: string) => attribute.startsWith("http") ? "_blank" : 
       :to="link._path"
       :target="target(link._path)"
       active-class="font-bold"
-      class="mr-2 dark:text-white"
+      class="mr-2 dark:text-black"
     >
       <Icon :name="link.icon.name" :class="link.icon.class" /> <span v-if="link.show_title">{{ link.title }}</span>
     </NuxtLink>

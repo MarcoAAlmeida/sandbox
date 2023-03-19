@@ -8,7 +8,7 @@ export default {
     useHead({
       titleTemplate: '%s - a ML learning resource',
       bodyAttrs: {
-        style: 'background-image:url(\'/img/pattern/dalle-5.png\')'
+        style: 'background-color:white'
       }
     })
     return { dynamic: ref(49) }
