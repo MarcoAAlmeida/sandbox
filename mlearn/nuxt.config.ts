@@ -21,8 +21,9 @@ export default defineNuxtConfig({
       theme: {
         default: 'min-dark',
         dark: 'min-dark',
-        sepia: 'monokai'
-      }
+        sepia: 'one-dark-pro'
+      },
+      preload: ['javascript', 'java', 'python']
     },
     documentDriven: true,
     markdown:{
