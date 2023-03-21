@@ -25,7 +25,7 @@ const defaultOptions = [
 
             <img class="object-cover w-full h-48 mt-2" :src="useCover(article.cover, defaultOptions)" alt="{{ article.title }}">
 
-            <div class="flex items-center justify-between px-4 py-2 text-white">
+            <div class="flex items-center justify-between px-4 py-2 text-white dark:text-black">
               <p>{{ article.tags }}</p>
             </div>
           </a>
