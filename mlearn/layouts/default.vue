@@ -14,9 +14,7 @@
   }
 }
 </style>
-<script>
-import AppLayout from "../components/AppLayout";
-export default {
-  components: {AppLayout}
-}
+<script setup lang="ts">
+const { page } = useContent()
+useContentHead(page)
 </script>
