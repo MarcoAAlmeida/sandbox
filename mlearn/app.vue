@@ -6,7 +6,7 @@
 export default {
   setup () {
     useHead({
-      titleTemplate: '%s - a ML learning resource',
+      titleTemplate: 'a ML learning blog',
       bodyAttrs: {
         style: 'background-color:white'
       }

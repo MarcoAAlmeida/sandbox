@@ -1,31 +1,29 @@
 <script setup lang="ts">
-import Article from "~/components/Article.vue";
 
-const defaultOptions = [
-  'img/ai_collab/dalle-1.png',
-  'img/ai_collab/dalle-2.png',
-  'img/ai_collab/dalle-3.png',
-  'img/ai_collab/dalle-4.png',
-  'img/ai_collab/dalle-5.png',
-  'img/ai_collab/dalle-6.png',
-  'img/ai_collab/dalle-7.png'
-]
+const route = useRoute()
 
 import type {QueryBuilderParams} from '@nuxt/content/dist/runtime/types'
 
-
 const query: QueryBuilderParams = {
   path: '/collab',
-  where: {published: {$eq: true}},
+  where: {
+    $and: [
+      {tags: {$contains: route.params.id}},
+      {published: {$eq: true}}
+    ]
+  },
   limit: 15,
   sort: [{authorship: -1}]
-
 }
 
 </script>
 
 <template>
   <AppLayout>
+    <h1 :id="id" class="text-center p-4 text-4xl font-bold">
+      {{ route.params.id }}
+    </h1>
+
     <ContentList v-slot="{ list }" :query="query">
       <div class="flex justify-center flex-wrap">
         <div
