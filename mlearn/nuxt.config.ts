@@ -9,7 +9,8 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     'nuxt-icon',
     'nuxt-config-schema',
-    '@nuxthq/studio'
+    '@nuxthq/studio',
+    '@pinia/nuxt'
   ],
   colorMode: {
     preference: 'light',
