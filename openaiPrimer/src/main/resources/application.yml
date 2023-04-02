@@ -12,6 +12,18 @@ feign:
         readTimeout: 5000
         loggerLevel: basic
 
+jwt:
+  private:
+    key: "classpath:app.key"
+  public:
+    key: "classpath:app.pub"
+
+api:
+  version: "1.0-SNAPSHOT"
+  server:
+    url: "http://localhost"
+  description: "The User API is used to create, update, and delete users. Users can be created with or without an associated account. If an account is created, the user will be granted the <strong>ROLE_USER</strong> role. If an account is not created, the user will be granted the <b>ROLE_USER</b> role."
+
 openai:
   apikey: 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
   gpt-model: gpt-3.5-turbo
