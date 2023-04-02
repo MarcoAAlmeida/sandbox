@@ -21,6 +21,12 @@ published: false
 - [OpenAI Documentation](https://platform.openai.com/docs/introduction)
 - [OpenAI API Reference](https://platform.openai.com/docs/api-reference/introduction)
 
+[OpenAI Cookbook](https://github.com/openai/openai-cookbook)
+
+- [Usage](https://platform.openai.com/account/usage)
+
+
+
 
 ![Angels on a pin](/img/2023-03-25-190625.png)
 
