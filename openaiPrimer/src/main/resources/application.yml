@@ -1,0 +1,51 @@
+spring:
+  application:
+    name: mb
+  profiles:
+    active: dev
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
+
+openai:
+  apikey: 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
+  gpt-model: gpt-3.5-turbo
+  audio-model: whisper-1
+  http-client:
+    read-timeout: 3000
+    connect-timeout: 3000
+  urls:
+    base-url: https://api.openai.com/v1
+    chat-url: /chat/completions
+    create-transcription-url: /audio/transcriptions
+
+management:
+  endpoints:
+    web:
+      base-path: /management
+      exposure:
+        include:
+          [
+              'env',
+              'health',
+              'info',
+              'logfile',
+              'loggers',
+              'threaddump',
+              'liquibase',
+          ]
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+      group:
+        liveness:
+          include: livenessState
+        readiness:
+          include: readinessState,db
