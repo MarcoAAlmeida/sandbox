@@ -11,6 +11,7 @@ spring:
     console:
       enabled: true
 
-  jpa:
-    hibernate:
-      ddl-auto: create
+  liquibase:
+    enabled: true
+    change-log: classpath:liquibase/master.xml
+

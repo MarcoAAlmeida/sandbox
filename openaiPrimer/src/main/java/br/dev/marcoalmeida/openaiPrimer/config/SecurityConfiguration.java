@@ -25,6 +25,8 @@ import org.springframework.security.web.SecurityFilterChain;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 
+import static org.springframework.security.web.util.matcher.AntPathRequestMatcher.antMatcher;
+
 @EnableWebSecurity
 @Configuration
 public class SecurityConfiguration {
@@ -44,15 +46,19 @@ public class SecurityConfiguration {
      */
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+
         //@formatter:off
         return http
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests
-
+                        .requestMatchers(antMatcher("/h2-console/**")).permitAll()
                         .requestMatchers("/api/auth/**", "/swagger-ui-custom.html" ,"/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**", "/webjars/**",
-                                "/swagger-ui/index.html","/api-docs/**")
+                                "/swagger-ui/index.html","/api-docs/**", "/h2-console/**", "/actuator/**", "/actuator", "/actuator/health", "/actuator/info", "/actuator/prometheus", "/actuator/health/**", "/actuator/info/**", "/actuator/prometheus/**")
+
                         .permitAll()
                         .anyRequest()
                         .authenticated())
+                .headers().frameOptions().disable()
+                .and()
                 .cors().disable()
                 .csrf().disable()
                 .formLogin().disable()
