@@ -12,6 +12,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Indexed;
 
+import java.util.concurrent.TimeUnit;
+
 @Configuration
 @Indexed
 @Data
@@ -34,7 +36,7 @@ public class OpenAIClientConfig {
 
     @Bean
     public Request.Options options() {
-        return new Request.Options(getConnectTimeout(), getReadTimeout());
+        return new Request.Options(connectTimeout, TimeUnit.MILLISECONDS, readTimeout, TimeUnit.MILLISECONDS, true);
     }
 
     @Bean

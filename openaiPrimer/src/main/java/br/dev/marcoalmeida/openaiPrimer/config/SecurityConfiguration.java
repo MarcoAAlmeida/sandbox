@@ -59,7 +59,7 @@ public class SecurityConfiguration {
                         .authenticated())
                 .headers().frameOptions().disable()
                 .and()
-                .cors().disable()
+                .cors().and()
                 .csrf().disable()
                 .formLogin().disable()
                 .httpBasic().disable()
