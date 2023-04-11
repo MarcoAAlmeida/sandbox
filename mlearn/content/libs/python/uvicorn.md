@@ -4,7 +4,7 @@ title: 'Uvicorn - ASGI Server'
 navigation.title: 'uvicorn'
 description: 'Uvicorn is a lightning-fast ASGI server built on top of asyncio and httptools for Python web applications'
 tags: 'python,server,ASGI'
-cover: '/img/uvicorn.png'
+cover: '/img/png-transparent-python-logo-thumbnail.png'
 authorship: '20230411 - marcoalmeida.dev.br@gmail.com'
 published: true
 ---

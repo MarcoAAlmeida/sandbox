@@ -4,7 +4,7 @@ title: 'Prometheus FastAPI Instrumentator'
 navigation.title: 'prometheus-fastapi-instrumentator'
 description: 'A Python library that provides instrumentation for FastAPI applications with Prometheus'
 tags: 'python,fastAPI,Prometheus,monitoring'
-cover: '/img/prometheus-fastapi-instrumentator.png'
+cover: '/img/png-transparent-python-logo-thumbnail.png'
 authorship: '20230411 - marcoalmeida.dev.br@gmail.com'
 published: true
 ---
