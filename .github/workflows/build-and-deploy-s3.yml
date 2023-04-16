@@ -1,5 +1,5 @@
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
+name: build-and-deploy-s3
+run-name: ${{ github.actor }} builds project with GitHub Actions
 on: [push]
 jobs:
   check-bats-version:
@@ -9,5 +9,5 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '19'
-      - run: npm install -g bats
-      - run: bats -v
+      - run: cd mlearn && yarn install && npm run generate
+      - run: cd mlearn && ls -al
