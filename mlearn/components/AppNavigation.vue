@@ -1,57 +1,15 @@
 <script setup lang="ts">
-const { cover } = useAppConfig()
+import {useNavbarStore} from '~/store/navbar'
+import {storeToRefs} from 'pinia'
 
-import { ref } from 'vue'
+const navbarStore = useNavbarStore()
+const {navigation} = storeToRefs(navbarStore)
 
-const navigation = ref([
-  {
-    "title":"Home",
-    "_path":"/",
-    "icon":{
-      "name":"emojione:house",
-      "class":"",
-    },
-    "show_title": true
-  },
-  {
-    "title":"collab",
-    "_path":"/collab",
-    "icon": {
-      "name": "logos:openai-icon",
-      "class": "text-primary dark:text-white",
-    },
-    "show_title": true
-  },
-  {
-    "title": "github",
-    "_path": "https://github.com/MarcoAAlmeida",
-    "icon": {
-      "name": "logos:github-icon",
-      "class": "text-primary dark:text-white",
-    },
-  },
-  {
-    "title": "twitter",
-    "_path": "https://twitter.com/MarcoDevBR",
-    "icon": {
-      "name": "logos:twitter"
-    },
-  },
-  {
-    "title": "linkedIn",
-    "_path": "https://www.linkedin.com/in/marcoaasilva/",
-    "icon": {
-      "name": "logos:linkedin-icon",
-    },
-  }
-])
-
-const target = (attribute: string) => attribute.startsWith("http") ? "_blank" : "_self"
-
+const target = (attribute: String) => attribute.startsWith("http") ? "_blank" : "_self"
 </script>
 
 <template>
-  <div class="flex justify-end p-6">
+  <div class="flex justify-center p-6">
     <NuxtLink
       v-for="link of navigation"
       :key="link._path"
