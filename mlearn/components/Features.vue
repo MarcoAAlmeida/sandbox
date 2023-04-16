@@ -5,7 +5,7 @@
         <div v-for="feature in features" :key="feature" class="flex justify-center m-1 ">
           <NuxtLink
             :to="feature._path"
-            :target="self"
+            target="self"
           >
             <Icon :name="feature.icon.name" :class="feature.icon.class" size="4em" />
 
