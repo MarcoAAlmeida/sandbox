@@ -18,7 +18,7 @@ const query: QueryBuilderParams = {
   path: '/collab',
   where: {published: {$eq: true}},
   limit: 15,
-  sort: [{authorship: -1}]
+  sort: [{publicationDate: -1}]
 
 }
 
@@ -32,14 +32,7 @@ const query: QueryBuilderParams = {
           v-for="article in list" :key="article._path"
           class="w-full max-w-md px-8 py-4 mr-5 ml-5 mt-16 bg-white rounded-lg shadow-lg dark:bg-gray-800"
         >
-          <Article
-            :title="article.title"
-            :path="article._path"
-            :cover="article.cover"
-            :description="article.description"
-            :tags="article.tags"
-            :authorship="article.authorship"
-          />
+          <Article :content="article"/>
         </div>
       </div>
     </ContentList>

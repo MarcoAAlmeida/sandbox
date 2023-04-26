@@ -4,6 +4,9 @@
     <main class="prose prose-gray max-w-none">
       <slot />
     </main>
+    <Footer/>
   </div>
 </template>
 
+<script setup>
+</script>
