@@ -1,1 +1,5 @@
 pandas
+blosc2
+matplotlib
+gensim
+request
