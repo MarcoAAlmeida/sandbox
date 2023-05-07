@@ -1,9 +1,11 @@
 <template>
+  <div>
   <div v-if="cards_available">
     <p class="text-center p-4 text-4xl font-bold">Cards</p>
     <div class="flex flex-wrap justify-center">
       <Card v-for="card in get_cards_by_slug(join_by_slashes(route.params.slug))" :content="card"/>
     </div>
+  </div>
   </div>
 </template>
 
