@@ -2,4 +2,7 @@ pandas
 blosc2
 matplotlib
 gensim
-request
+langchain
+openai
+serapi
+
