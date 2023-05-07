@@ -9,8 +9,6 @@
 
 <script setup lang="ts">
 
-
-
 import {usePageCardsStore} from '~/store/page_cards'
 import {storeToRefs} from 'pinia'
 
