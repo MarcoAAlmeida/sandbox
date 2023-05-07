@@ -1,8 +1,8 @@
 <template>
   <AppLayout>
     <AuthorAndDate/>
-    <PageCards/>
     <slot/>
+    <PageCards/>
     <Tags/>
   </AppLayout>
 </template>
