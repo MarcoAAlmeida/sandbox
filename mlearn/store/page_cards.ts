@@ -7,7 +7,7 @@ export const usePageCardsStore = defineStore({
         return {
             page_cards:[
                 {
-                    slug: '/collab/langchain',
+                    slug: '/collab/langchai/',
                     cards: [
                         {
                             title: 'Langchain main github',
