@@ -2,6 +2,8 @@
   <div class="flex flex-wrap justify-center">
     <h1>HHAHAHAH</h1>
     <p>{{ cards }}</p>
+    <p>{{ page_cards }}</p>
+    <p>{{join_by_slashes(route.params.slug)}}</p>
     <Card v-for="card in cards" :content="card"/>
   </div>
 </template>
@@ -14,7 +16,7 @@ import {storeToRefs} from 'pinia'
 const route = useRoute()
 
 const pageCardsStore = usePageCardsStore()
-const {get_cards_by_slug} = storeToRefs(pageCardsStore)
+const {page_cards, get_cards_by_slug} = storeToRefs(pageCardsStore)
 
 const join_by_slashes = (slug: String[]) => '/' + slug.join('/')
 
