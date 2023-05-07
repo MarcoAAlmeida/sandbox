@@ -1,5 +1,7 @@
 <template>
   <div class="flex flex-wrap justify-center">
+    <h1>HHAHAHAH</h1>
+    <p>{{ cards }}</p>
     <Card v-for="card in cards" :content="card"/>
   </div>
 </template>
