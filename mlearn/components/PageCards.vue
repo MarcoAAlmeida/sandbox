@@ -1,9 +1,6 @@
 <template>
-  <div v-if="cards.length !== 0">
-    <p class="text-center p-4 text-4xl font-bold">Cards</p>
-    <div class="flex flex-wrap justify-center">
-      <Card v-for="card in cards" :content="card"/>
-    </div>
+  <div class="flex flex-wrap justify-center">
+    <Card v-for="card in cards" :content="card"/>
   </div>
 </template>
 
