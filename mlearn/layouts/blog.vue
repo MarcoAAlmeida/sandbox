@@ -1,15 +1,13 @@
 <template>
   <AppLayout>
     <AuthorAndDate/>
-    <slot/>
-    <h1>HAHAHA</h1>
     <PageCards/>
+    <slot/>
     <Tags/>
   </AppLayout>
 </template>
 
 <script setup lang="ts">
-import PageCards from "~/components/PageCards.vue";
 
 const { page } = useContent()
 
