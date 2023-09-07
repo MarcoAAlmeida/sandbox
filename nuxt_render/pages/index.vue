@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-const {data: posts} = await useFetch('https://jsonplaceholder.typicode.com/posts')
+const {data: posts} = await useFetch('http://localhost:3002/api/posts')
 
 const truncate = (original: string) => original.substring(0, 50)
 const getPostUrl = (id: string) => "/posts/" + id
