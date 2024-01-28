@@ -1,17 +1,14 @@
-# Welcome to MkDocs
+# GO LEARN
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## Goals
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+- Github Actions deploy of a [mkdocs.org](https://www.mkdocs.org) site
+- protobuf generation example (Gradle Tooling API artifact model)
 
 ## Project layout
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
+> 'golearn'
+    site/
+        doc/
+            index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
