@@ -1,0 +1,29 @@
+plugins {
+    id "java-gradle-plugin"
+}
+
+
+sourceCompatibility = 17
+targetCompatibility = 17
+
+group = 'br.dev.marcoalmeida.itdepends'
+version = '0.0.1    '
+
+repositories {
+    jcenter()
+    mavenCentral()
+    gradlePluginPortal()
+}
+
+dependencies {
+    implementation gradleApi()
+}
+
+gradlePlugin {
+    plugins {
+        annotationProcessorPlugin {
+            id = "br.dev.marcoalmeida.itdepends.HelloWorldTask"
+            implementationClass = "br.dev.marcoalmeida.itdepends.HelloWorldTask"
+        }
+    }
+}
