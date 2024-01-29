@@ -6,12 +6,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://marcoaalmeida.github.io/sandbox/about/</loc>
+         <loc>https://marcoaalmeida.github.io/sandbox/actions/</loc>
          <lastmod>2024-01-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://marcoaalmeida.github.io/sandbox/actions/</loc>
+         <loc>https://marcoaalmeida.github.io/sandbox/mkdocs/</loc>
+         <lastmod>2024-01-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://marcoaalmeida.github.io/sandbox/protobuf/</loc>
          <lastmod>2024-01-29</lastmod>
          <changefreq>daily</changefreq>
     </url>

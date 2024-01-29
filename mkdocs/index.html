@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://marcoaalmeida.github.io/sandbox/actions/">
+        <link rel="canonical" href="https://marcoaalmeida.github.io/sandbox/mkdocs/">
       
       
-        <link rel="prev" href="../mkdocs/">
+        <link rel="prev" href="..">
       
       
-        <link rel="next" href="../protobuf/">
+        <link rel="next" href="../actions/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Github Actions - GO learning</title>
+        <title>mkDocs - GO learning</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#action" class="md-skip">
+        <a href="#mkdocs" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Github Actions
+              mkDocs
             
           </span>
         </div>
@@ -218,26 +218,6 @@
       
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../mkdocs/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    mkDocs
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
@@ -250,18 +230,28 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
   
   <span class="md-ellipsis">
-    Github Actions
+    mkDocs
   </span>
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+      </a>
       
-      <a href="./" class="md-nav__link md-nav__link--active">
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -270,59 +260,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#github-actions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Github Actions
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sandbox-actions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sandbox Actions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Sandbox Actions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#publish-mkdocs-to-gh-pages" class="md-nav__link">
-    <span class="md-ellipsis">
-      publish mkdocs to GH Pages
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -367,47 +304,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#github-actions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Github Actions
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sandbox-actions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sandbox Actions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Sandbox Actions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#publish-mkdocs-to-gh-pages" class="md-nav__link">
-    <span class="md-ellipsis">
-      publish mkdocs to GH Pages
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -421,36 +317,15 @@
                   
 
 
-<h1 id="action">Action</h1>
-<h2 id="github-actions">Github Actions</h2>
-<p><a href="https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions">Understanding Github Actions</a></p>
-<p><a href="https://pages.github.com/">GH Pages - websites for your repos</a></p>
-<h2 id="sandbox-actions">Sandbox Actions</h2>
-<p>Check the execution at <a href="https://github.com/MarcoAAlmeida/sandbox/actions">Sandbox actions console</a></p>
-<h3 id="publish-mkdocs-to-gh-pages">publish mkdocs to GH Pages</h3>
-<p><a href="https://github.com/mhausenblas/mkdocs-deploy-gh-pages">mkdocs-deploy</a></p>
-<pre><code class="language-yaml">name: Publish mkdocs via GitHub Pages
-on:
-  push:
-    paths:
-      golearn/site/**
-
-jobs:
-  build:
-    name: Deploy docs
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-python@v2
-      - run: pip install --upgrade pip &amp;&amp; pip install mkdocs mkdocs-gen-files mkdocs-material
-      - run: git config user.name 'github-actions[bot]' &amp;&amp; git config user.email 'github-actions[bot]@users.noreply.github.com'
-      - name: Publish docs
-        working-directory: ./golearn/site
-        run: mkdocs gh-deploy
-</code></pre>
-<p><a href="https://github.com/MarcoAAlmeida/sandbox/blob/main/.github/workflows/main.yml">check source</a></p>
+<h1 id="mkdocs">Mkdocs</h1>
+<p><a href="https://www.mkdocs.org/">www.mkdocs.org</a></p>
+<blockquote>
+<p>MkDocs is a fast, simple and downright gorgeous static site generator</p>
+</blockquote>
+<p>This is a Python tool that´s simple enough to be deployed through a <a href="../actions/">Github Action</a>.</p>
+<ul>
+<li><a href="https://www.mkdocs.org/user-guide/writing-your-docs/">writing docs</a></li>
+</ul>
 
 
 
