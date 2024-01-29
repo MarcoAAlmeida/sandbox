@@ -15,7 +15,7 @@ Check the execution at [Sandbox actions console](https://github.com/MarcoAAlmeid
 
 [mkdocs-deploy](https://github.com/mhausenblas/mkdocs-deploy-gh-pages)
 
-This action publishes to (the sandbox root)[https://marcoaalmeida.github.io/sandbox/] (which might not be advisable)
+This action publishes to [the sandbox root](https://marcoaalmeida.github.io/sandbox/) (which might not be advisable)
 
 > TODO : disable this, and put in place an action to upload to s3, make a link to [Marco's landing page](https://marcoalmeida.dev.br/)
 
