@@ -15,30 +15,26 @@ Check the execution at [Sandbox actions console](https://github.com/MarcoAAlmeid
 
 [mkdocs-deploy](https://github.com/mhausenblas/mkdocs-deploy-gh-pages)
 
-### publish nuxtJS to s3
-
 ```yaml
-name: build-and-deploy-s3
-run-name: ${{ github.actor }} builds project with GitHub Actions
+name: Publish mkdocs via GitHub Pages
 on:
   push:
     paths:
-      mlearn/**
+      golearn/site/**
+
 jobs:
-  build-nuxt-then-upload:
+  build:
+    name: Deploy docs
     runs-on: ubuntu-latest
     steps:
-      - uses: aws-actions/configure-aws-credentials@v2
+      - uses: actions/checkout@v2
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '19'
-      - run: cd mlearn && yarn install && npm run generate
-      - run: cd mlearn && ls -al
-      - run: aws s3 sync mlearn/.output/public s3://mlearn.marcoalmeida.dev.br -
+          fetch-depth: 0
+      - uses: actions/setup-python@v2
+      - run: pip install --upgrade pip && pip install mkdocs mkdocs-gen-files mkdocs-material
+      - run: git config user.name 'github-actions[bot]' && git config user.email 'github-actions[bot]@users.noreply.github.com'
+      - name: Publish docs
+        working-directory: ./golearn/site
+        run: mkdocs gh-deploy
 ```
-[check source](https://github.com/MarcoAAlmeida/sandbox/blob/main/.github/workflows/build-and-deploy-s3.yml)
+[check source](https://github.com/MarcoAAlmeida/sandbox/blob/main/.github/workflows/main.yml)

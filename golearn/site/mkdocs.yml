@@ -3,7 +3,16 @@ site_url: https://marcoaalmeida.github.io/sandbox/
 nav:
   - Home: index.md
   - mkDocs: mkdocs.md
-  - Actions: actions.md
-  - About: about.md
+  - Github Actions: actions.md
+  - protobuf: protobuf.md
+
 theme:
   name: material
+  icon:
+    logo: fontawesome/brands/golang
+  palette:
+    scheme: slate
+    primary: teal
+    accent: lime
+  font:
+    code: Roboto Mono
