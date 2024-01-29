@@ -5,4 +5,4 @@ nav:
   - Actions: actions.md
   - About: about.md
 theme:
-  name: readthedocs
+  name: mkdocs
