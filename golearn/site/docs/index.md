@@ -1,5 +1,8 @@
 # GO LEARN
 
+v1
+
+
 ## Goals
 
 - Github Actions deploy of a [mkdocs.org](https://www.mkdocs.org) site
