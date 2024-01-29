@@ -6,3 +6,4 @@
 - [protobuf](https://github.com/golang/protobuf) generation example (Gradle Tooling API artifact model)
 
 
+![Screenshot](img/android-chrome-512x512.png)
