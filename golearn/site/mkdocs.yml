@@ -2,7 +2,8 @@ site_name: GO learning
 site_url: https://marcoaalmeida.github.io/sandbox/
 nav:
   - Home: index.md
+  - mkDocs: mkdocs.md
   - Actions: actions.md
   - About: about.md
 theme:
-  name: readthedocs
+  name: material

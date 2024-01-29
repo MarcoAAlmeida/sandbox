@@ -1,8 +1,5 @@
 # GO LEARN
 
-## v4
-Alana
-
 ## Goals
 
 - Github Actions deploy of a [mkdocs.org](https://www.mkdocs.org) site
