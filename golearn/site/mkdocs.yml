@@ -5,4 +5,5 @@ nav:
   - Actions: actions.md
   - About: about.md
 theme:
-  name: readthedocs
+  palette:
+    scheme: slate
