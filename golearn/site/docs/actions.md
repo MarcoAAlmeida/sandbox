@@ -6,6 +6,10 @@
 
 [GH Pages - websites for your repos](https://pages.github.com/)
 
+## Sandbox Actions
+
+Check the execution at [Sandbox actions console](https://github.com/MarcoAAlmeida/sandbox/actions)
+
 
 ### publish mkdocs to GH Pages
 
@@ -37,3 +41,4 @@ jobs:
       - run: cd mlearn && ls -al
       - run: aws s3 sync mlearn/.output/public s3://mlearn.marcoalmeida.dev.br -
 ```
+[check source](https://github.com/MarcoAAlmeida/sandbox/blob/main/.github/workflows/build-and-deploy-s3.yml)
