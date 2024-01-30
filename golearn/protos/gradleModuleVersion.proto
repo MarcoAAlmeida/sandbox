@@ -1,0 +1,8 @@
+syntax = "proto3";
+option go_package = "api/v1";
+
+message GradleModuleVersion{
+  string group = 1;
+  string name = 2;
+  string version = 3;
+}
