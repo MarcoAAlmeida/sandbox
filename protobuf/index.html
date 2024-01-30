@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://marcoaalmeida.github.io/sandbox/protobuf/">
       
       
-        <link rel="prev" href="../actions/">
+        <link rel="prev" href="./">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>protobuf - GO learning</title>
+        <title>testing - GO learning</title>
       
     
     
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              protobuf
+              testing
             
           </span>
         </div>
@@ -256,6 +256,46 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    protobuf
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sorting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -272,7 +312,7 @@
         
   
   <span class="md-ellipsis">
-    protobuf
+    testing
   </span>
   
 
@@ -317,8 +357,37 @@
 
 <h1 id="protbufs">Protbufs</h1>
 <ul>
-<li><a href="https://github.com/golang/protobuf">protobuf</a> generation example (Gradle Tooling API artifact model)</li>
+<li><a href="https://github.com/golang/protobuf">protobuf</a></li>
+<li><a href="https://docs.gradle.org/current/javadoc/org/gradle/tooling/package-summary.html">Gradle Tooling API</a></li>
 </ul>
+<p>Let´s write a simple protobuf to represent a <a href="https://docs.gradle.org/current/javadoc/org/gradle/tooling/model/GradleModuleVersion.html">Gradle Module</a></p>
+<pre><code class="language-protobuf">message GradleModuleVersion{
+  string group = 1;
+  string name = 2;
+  string version = 3;
+}
+</code></pre>
+<p>Generated Go struct with:</p>
+<pre><code class="language-bash">protoc --proto_path=./protos --go_out=./marshalling ./protos/GradleAnalysis.proto
+</code></pre>
+<p>Usage example:</p>
+<pre><code class="language-go">package main
+
+import (
+    &quot;fmt&quot;
+    pb &quot;golearn/api/v1&quot;
+)
+
+func main() {
+    commonsLang3 := pb.GradleModuleVersion{
+        Group:   &quot;org.apache.commons&quot;,
+        Name:    &quot;commons-lang3&quot;,
+        Version: &quot;3.14.0&quot;,
+    }
+
+    fmt.Println(&quot;artifact rep:&quot;, commonsLang3)
+}
+</code></pre>
 
 
 

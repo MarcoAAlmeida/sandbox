@@ -8,13 +8,9 @@
       
       
       
-        <link rel="canonical" href="https://marcoaalmeida.github.io/sandbox/actions/">
+        <link rel="canonical" href="https://marcoaalmeida.github.io/sandbox/sorting/">
       
       
-        <link rel="prev" href="../mkdocs/">
-      
-      
-        <link rel="next" href="../protobuf/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +18,7 @@
     
     
       
-        <title>Github Actions - GO learning</title>
+        <title>Sorting in Go - GO learning</title>
       
     
     
@@ -72,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#action" class="md-skip">
+        <a href="#sorting-in-go" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Github Actions
+              Sorting in Go
             
           </span>
         </div>
@@ -238,30 +234,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Github Actions
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../actions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -270,59 +246,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#github-actions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Github Actions
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sandbox-actions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sandbox Actions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Sandbox Actions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#publish-mkdocs-to-gh-pages" class="md-nav__link">
-    <span class="md-ellipsis">
-      publish mkdocs to GH Pages
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -407,47 +330,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#github-actions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Github Actions
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sandbox-actions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sandbox Actions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Sandbox Actions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#publish-mkdocs-to-gh-pages" class="md-nav__link">
-    <span class="md-ellipsis">
-      publish mkdocs to GH Pages
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -461,40 +343,10 @@
                   
 
 
-<h1 id="action">Action</h1>
-<h2 id="github-actions">Github Actions</h2>
-<p><a href="https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions">Understanding Github Actions</a></p>
-<p><a href="https://pages.github.com/">GH Pages - websites for your repos</a></p>
-<h2 id="sandbox-actions">Sandbox Actions</h2>
-<p>Check the execution at <a href="https://github.com/MarcoAAlmeida/sandbox/actions">Sandbox actions console</a></p>
-<h3 id="publish-mkdocs-to-gh-pages">publish mkdocs to GH Pages</h3>
-<p><a href="https://github.com/mhausenblas/mkdocs-deploy-gh-pages">mkdocs-deploy</a></p>
-<p>This action publishes to <a href="https://marcoaalmeida.github.io/sandbox/">the sandbox root</a> (which might not be advisable)</p>
-<blockquote>
-<p>TODO : disable this, and put in place an action to upload to s3, make a link to <a href="https://marcoalmeida.dev.br/">Marco's landing page</a></p>
-</blockquote>
-<pre><code class="language-yaml">name: Publish mkdocs via GitHub Pages
-on:
-  push:
-    paths:
-      golearn/site/**
-
-jobs:
-  build:
-    name: Deploy docs
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-python@v2
-      - run: pip install --upgrade pip &amp;&amp; pip install mkdocs mkdocs-gen-files mkdocs-material
-      - run: git config user.name 'github-actions[bot]' &amp;&amp; git config user.email 'github-actions[bot]@users.noreply.github.com'
-      - name: Publish docs
-        working-directory: ./golearn/site
-        run: mkdocs gh-deploy
-</code></pre>
-<p><a href="https://github.com/MarcoAAlmeida/sandbox/blob/main/.github/workflows/main.yml">check source</a></p>
+<h1 id="sorting-in-go">Sorting in Go</h1>
+<p><a href="https://yourbasic.org/golang/how-to-sort-in-go/">how-to-sort-in-go/</a></p>
+<p><a href="https://pkg.go.dev/google.golang.org/protobuf/testing/protocmp#SortRepeated">protocmp#SortRepeated</a></p>
+<p><a href="https://pkg.go.dev/sort">https://pkg.go.dev/sort</a></p>
 
 
 
