@@ -1,0 +1,10 @@
+dependencies:
+    - group: org.apache.commons
+      name: commons-lang3
+      version: 3.14.0
+    - group: org.apache.commons
+      name: commons-utils
+      version: 1.22.SNAPSHOT
+    - group: org.springframework
+      name: spring-boot-starter
+      version: 1.0.0

@@ -17,7 +17,7 @@ message GradleModuleVersion{
 Generated Go struct with:
 
 ```bash
-protoc --proto_path=./protos --go_out=./marshalling ./protos/gradleModuleVersion.proto
+protoc --proto_path=./protos --go_out=./marshalling ./protos/GradleAnalysis.proto
 ```
 
 Usage example:

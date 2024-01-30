@@ -6,3 +6,7 @@ message GradleModuleVersion{
   string name = 2;
   string version = 3;
 }
+
+message Scan{
+  repeated GradleModuleVersion dependencies = 1;
+}

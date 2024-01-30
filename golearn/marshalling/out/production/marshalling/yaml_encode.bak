@@ -1,0 +1,30 @@
+package main
+
+import (
+	"github.com/bufbuild/protoyaml-go"
+	pb "golearn/api/v1"
+	"log"
+)
+
+func main() {
+
+	commonsLang3 := pb.GradleModuleVersion{
+		Group:   "org.apache.commons",
+		Name:    "commons-lang3",
+		Version: "3.14.0",
+	}
+	// Marshal a proto message to YAML.
+	yamlBytes, err := protoyaml.Marshal(&commonsLang3)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// Unmarshal a proto message from YAML.
+	options := protoyaml.UnmarshalOptions{
+		Path: "testdata/basic.proto3test.yaml",
+	}
+	var myMessage pb.GradleModuleVersion
+	if err := options.Unmarshal(yamlBytes, &myMessage); err != nil {
+		log.Fatal(err)
+	}
+}
