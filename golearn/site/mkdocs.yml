@@ -5,8 +5,9 @@ nav:
   - mkDocs: mkdocs.md
   - Github Actions: actions.md
   - protobuf: protobuf.md
-  - sorting: protobuf.md
   - testing: protobuf.md
+  - sorting: protobuf.md
+  - go-git: git_client.md
 
 theme:
   name: material
