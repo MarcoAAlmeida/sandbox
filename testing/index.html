@@ -281,7 +281,7 @@
         
   
   <span class="md-ellipsis">
-    sorting
+    testing
   </span>
   
 
@@ -301,7 +301,27 @@
         
   
   <span class="md-ellipsis">
-    testing
+    sorting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git_client/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    go-git
   </span>
   
 
@@ -330,6 +350,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#teardown-suite" class="md-nav__link">
+    <span class="md-ellipsis">
+      TearDown suite
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passing-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passing environment variables
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -347,6 +393,55 @@
 <p><a href="https://pkg.go.dev/testing">Testing in Go</a></p>
 <p><a href="https://go.dev/doc/tutorial/add-a-test">Add a test</a></p>
 <p><a href="https://pkg.go.dev/github.com/stretchr/testify/assert#Contains">Assertions</a></p>
+<h2 id="teardown-suite">TearDown suite</h2>
+<p><a href="https://medium.com/nerd-for-tech/setup-and-teardown-unit-test-in-go-bd6fa1b785cd">Setup and teardown</a></p>
+<p><strong>github_client_test.go</strong></p>
+<pre><code class="language-go">
+func setupSuite(tb testing.TB) func (tb testing.TB) {
+log.Println(&quot;setup suite&quot;)
+
+err := os.RemoveAll(&quot;foo&quot;)
+if err != nil {
+return nil
+}
+
+// Return a function to teardown the test
+return func (tb testing.TB) {
+log.Println(&quot;do the cleanup&quot;)
+err = os.RemoveAll(&quot;foo&quot;)
+
+log.Println(&quot;teardown suite&quot;)
+}
+}
+
+func TestReadScan(t *testing.T) {
+
+teardownSuite := setupSuite(t)
+defer teardownSuite(t)
+
+StandardGitClone()
+
+assert.DirExists(t, &quot;foo&quot;)
+}
+</code></pre>
+<h2 id="passing-environment-variables">Passing environment variables</h2>
+<p>The easiest way if via Run configurations</p>
+<p><img alt="Screenshot 1" src="../img/Screenshot-2024-01-30-180245.png" /></p>
+<p>Then use os.GetEnv(key)</p>
+<pre><code class="language-go">package v1
+
+import (
+    &quot;fmt&quot;
+    &quot;os&quot;
+)
+
+func DownloadYamlResource() {
+    token := os.Getenv(&quot;GITHUB_TOKEN&quot;)
+
+    fmt.Printf(&quot;token %s&quot;, token)
+}
+</code></pre>
+<p><img alt="Screenshot 2" src="../img/Screenshot-2024-01-30-180323.png" /></p>
 
 
 

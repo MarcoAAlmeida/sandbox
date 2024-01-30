@@ -11,6 +11,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://marcoaalmeida.github.io/sandbox/git_client/</loc>
+         <lastmod>2024-01-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://marcoaalmeida.github.io/sandbox/mkdocs/</loc>
          <lastmod>2024-01-30</lastmod>
          <changefreq>daily</changefreq>
