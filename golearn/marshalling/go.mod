@@ -5,7 +5,7 @@ go 1.19
 require google.golang.org/protobuf v1.32.0
 
 require (
-	github.com/bufbuild/protoyaml-go v0.1.7
+	github.com/bufbuild/protoyaml-go v0.1.8
 	github.com/go-git/go-git/v5 v5.11.0
 	github.com/stretchr/testify v1.8.4
 )

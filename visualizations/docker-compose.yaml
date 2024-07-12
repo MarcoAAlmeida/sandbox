@@ -1,0 +1,29 @@
+# Sample compose file
+version: "3"
+services:
+  wiremock:
+    image: "wiremock/wiremock:3x-alpine"
+    container_name: my_wiremock
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./wiremock/__files:/home/wiremock/__files
+#      - ./extensions:/var/wiremock/extensions
+#      - ./mappings:/home/wiremock/mappings
+    entrypoint: ["/docker-entrypoint.sh", "--global-response-templating", "--disable-gzip", "--verbose"]
+
+  grafana:
+    build:
+      context: grafana
+      dockerfile: Dockerfile
+    container_name: grafana
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=grafana
+    volumes:
+      - ./grafana:/etc/grafana/provisioning/datasources
+volumes:
+  prom_data:
