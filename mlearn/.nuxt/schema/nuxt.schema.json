@@ -1,0 +1,329 @@
+{
+  "id": "#",
+  "properties": {
+    "appConfig": {
+      "id": "#appConfig",
+      "properties": {
+        "prose": {
+          "title": "Prose configuration from Nuxt Typography",
+          "description": "",
+          "tags": [
+            "@studio-icon material-symbols:short-text-rounded"
+          ],
+          "id": "#appConfig/prose",
+          "properties": {
+            "copyButton": {
+              "title": "Copy button (used in code blocks)",
+              "description": "",
+              "tags": [
+                "@studio-icon material-symbols:content-copy"
+              ],
+              "id": "#appConfig/prose/copyButton",
+              "properties": {
+                "iconCopy": {
+                  "title": "Icon displayed to copy",
+                  "description": "",
+                  "tags": [],
+                  "id": "#appConfig/prose/copyButton/iconCopy",
+                  "default": "ph:copy",
+                  "type": "string"
+                },
+                "iconCopied": {
+                  "title": "Icon displayed when copied",
+                  "description": "",
+                  "tags": [],
+                  "id": "#appConfig/prose/copyButton/iconCopied",
+                  "default": "ph:check",
+                  "type": "string"
+                }
+              },
+              "default": {
+                "iconCopy": "ph:copy",
+                "iconCopied": "ph:check"
+              },
+              "type": "object"
+            },
+            "headings": {
+              "title": "Default configuration for all headings (h1, h2, h3, h4, h5 and h6)",
+              "description": "",
+              "tags": [
+                "@studio-icon material-symbols:title"
+              ],
+              "id": "#appConfig/prose/headings",
+              "properties": {
+                "icon": {
+                  "title": "Default icon for anchor link on hover",
+                  "description": "",
+                  "tags": [],
+                  "tsType": "string|false",
+                  "id": "#appConfig/prose/headings/icon",
+                  "default": "ph:link",
+                  "type": "string"
+                }
+              },
+              "default": {
+                "icon": "ph:link"
+              },
+              "type": "object"
+            },
+            "h1": {
+              "title": "First heading configuration",
+              "description": "",
+              "tags": [
+                "@studio-icon material-symbols:format-h1"
+              ],
+              "id": "#appConfig/prose/h1",
+              "properties": {
+                "icon": {
+                  "title": "Icon displayed for anchor link on hover",
+                  "description": "",
+                  "tags": [],
+                  "tsType": "string|false",
+                  "id": "#appConfig/prose/h1/icon",
+                  "default": "",
+                  "type": "string"
+                }
+              },
+              "default": {
+                "icon": ""
+              },
+              "type": "object"
+            },
+            "h2": {
+              "title": "Second heading configuration",
+              "description": "",
+              "tags": [
+                "@studio-icon material-symbols:format-h2"
+              ],
+              "id": "#appConfig/prose/h2",
+              "properties": {
+                "icon": {
+                  "title": "Icon displayed for anchor link on hover",
+                  "description": "",
+                  "tags": [],
+                  "tsType": "string|false",
+                  "id": "#appConfig/prose/h2/icon",
+                  "default": "",
+                  "type": "string"
+                }
+              },
+              "default": {
+                "icon": ""
+              },
+              "type": "object"
+            },
+            "h3": {
+              "title": "Third heading configuration",
+              "description": "",
+              "tags": [
+                "@studio-icon material-symbols:format-h3"
+              ],
+              "id": "#appConfig/prose/h3",
+              "properties": {
+                "icon": {
+                  "title": "Icon displayed for anchor link on hover",
+                  "description": "",
+                  "tags": [],
+                  "tsType": "string|false",
+                  "id": "#appConfig/prose/h3/icon",
+                  "default": "",
+                  "type": "string"
+                }
+              },
+              "default": {
+                "icon": ""
+              },
+              "type": "object"
+            },
+            "h4": {
+              "title": "Fourth heading configuration",
+              "description": "",
+              "tags": [
+                "@studio-icon material-symbols:format-h4"
+              ],
+              "id": "#appConfig/prose/h4",
+              "properties": {
+                "icon": {
+                  "title": "Icon displayed for anchor link on hover",
+                  "description": "",
+                  "tags": [],
+                  "tsType": "string|false",
+                  "id": "#appConfig/prose/h4/icon",
+                  "default": "",
+                  "type": "string"
+                }
+              },
+              "default": {
+                "icon": ""
+              },
+              "type": "object"
+            },
+            "h5": {
+              "title": "Fifth heading configuration",
+              "description": "",
+              "tags": [
+                "@studio-icon material-symbols:format-h5"
+              ],
+              "id": "#appConfig/prose/h5",
+              "properties": {
+                "icon": {
+                  "title": "Icon displayed for anchor link on hover",
+                  "description": "",
+                  "tags": [],
+                  "tsType": "string|false",
+                  "id": "#appConfig/prose/h5/icon",
+                  "default": "",
+                  "type": "string"
+                }
+              },
+              "default": {
+                "icon": ""
+              },
+              "type": "object"
+            },
+            "h6": {
+              "title": "Sixth heading configuration",
+              "description": "",
+              "tags": [
+                "@studio-icon material-symbols:format-h6"
+              ],
+              "id": "#appConfig/prose/h6",
+              "properties": {
+                "icon": {
+                  "title": "Icon displayed for anchor link on hover",
+                  "description": "",
+                  "tags": [],
+                  "tsType": "string|false",
+                  "id": "#appConfig/prose/h6/icon",
+                  "default": "",
+                  "type": "string"
+                }
+              },
+              "default": {
+                "icon": ""
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "copyButton": {
+              "iconCopy": "ph:copy",
+              "iconCopied": "ph:check"
+            },
+            "headings": {
+              "icon": "ph:link"
+            },
+            "h1": {
+              "icon": ""
+            },
+            "h2": {
+              "icon": ""
+            },
+            "h3": {
+              "icon": ""
+            },
+            "h4": {
+              "icon": ""
+            },
+            "h5": {
+              "icon": ""
+            },
+            "h6": {
+              "icon": ""
+            }
+          },
+          "type": "object"
+        },
+        "cover": {
+          "type": "string",
+          "id": "#appConfig/cover",
+          "default": "/cover.jpg"
+        },
+        "socials": {
+          "id": "#appConfig/socials",
+          "properties": {
+            "github": {
+              "type": "string",
+              "id": "#appConfig/socials/github",
+              "default": ""
+            }
+          },
+          "default": {
+            "github": ""
+          },
+          "type": "object"
+        }
+      },
+      "default": {
+        "cover": "/cover.jpg",
+        "socials": {
+          "github": ""
+        },
+        "prose": {
+          "copyButton": {
+            "iconCopy": "ph:copy",
+            "iconCopied": "ph:check"
+          },
+          "headings": {
+            "icon": "ph:link"
+          },
+          "h1": {
+            "icon": ""
+          },
+          "h2": {
+            "icon": ""
+          },
+          "h3": {
+            "icon": ""
+          },
+          "h4": {
+            "icon": ""
+          },
+          "h5": {
+            "icon": ""
+          },
+          "h6": {
+            "icon": ""
+          }
+        }
+      },
+      "type": "object"
+    }
+  },
+  "default": {
+    "appConfig": {
+      "cover": "/cover.jpg",
+      "socials": {
+        "github": ""
+      },
+      "prose": {
+        "copyButton": {
+          "iconCopy": "ph:copy",
+          "iconCopied": "ph:check"
+        },
+        "headings": {
+          "icon": "ph:link"
+        },
+        "h1": {
+          "icon": ""
+        },
+        "h2": {
+          "icon": ""
+        },
+        "h3": {
+          "icon": ""
+        },
+        "h4": {
+          "icon": ""
+        },
+        "h5": {
+          "icon": ""
+        },
+        "h6": {
+          "icon": ""
+        }
+      }
+    }
+  },
+  "type": "object"
+}
